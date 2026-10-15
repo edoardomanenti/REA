@@ -245,3 +245,77 @@ export const IconGlobeLock = ({ size = 14, ...p }: IconProps) => (
     <path d="M3.5 9h17M3.5 15h17M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18" />
   </svg>
 );
+
+export const IconMapPin = ({ size = 16, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" />
+    <circle cx="12" cy="9.5" r="2.5" />
+  </svg>
+);
+
+export const IconBox = ({ size = 16, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z" />
+    <path d="m4 7.5 8 4.5 8-4.5M12 12v9" />
+  </svg>
+);
+
+export const IconShuffle = ({ size = 18, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
+  </svg>
+);
+
+export const IconInfo = ({ size = 16, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 11v6M12 7.5v.5" />
+  </svg>
+);
+
+export const IconFilter = ({ size = 14, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="M4 6h16M7 12h10M10 18h4" />
+  </svg>
+);
+
+export const IconHeart = ({ size = 16, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-4 5 5 0 0 1 9 4c-2 4.6-9 9-9 9z" />
+  </svg>
+);
+
+export const IconExpand = ({ size = 14, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+  </svg>
+);
+
+export const IconSidebar = ({ size = 16, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <rect x="3" y="4" width="18" height="16" rx="2" />
+    <path d="M9 4v16" />
+  </svg>
+);
+
+export const IconScan = ({ size = 16, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+export const IconGrid = ({ size = 14, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <rect x="4" y="4" width="7" height="7" rx="1" />
+    <rect x="13" y="4" width="7" height="7" rx="1" />
+    <rect x="4" y="13" width="7" height="7" rx="1" />
+    <rect x="13" y="13" width="7" height="7" rx="1" />
+  </svg>
+);
+
+export const IconTrend = ({ size = 14, ...p }: IconProps) => (
+  <svg {...base(size, p)}>
+    <path d="m3 17 6-6 4 4 8-8M15 7h6v6" />
+  </svg>
+);

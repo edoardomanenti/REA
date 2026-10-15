@@ -5,6 +5,7 @@ import "./styles/header.css";
 import "./styles/home.css";
 import "./styles/banners.css";
 import "./styles/create.css";
+import "./styles/tools.css";
 import "./styles/footer.css";
 
 import { StrictMode } from "react";

@@ -68,7 +68,43 @@ e media dell'originale.
   quella evidence. L'analisi del bundle li include, con
   `https://assets.higgsfield.ai` nella lista delle origini consentite.
 
+## Pagine degli strumenti (cattura del 2026-10-15)
+
+Ogni pagina è stata aperta in Chromium e ispezionata con `inspect_web_page`
+(albero di accessibilità con testo), più uno screenshot a 1440×900.
+
+| Pagina originale               | Evidence ID (prefisso)   | Nodi di accessibilità | Pagina del clone    |
+| ------------------------------ | ------------------------ | --------------------- | ------------------- |
+| `/audio`                       | `ev_aafd61e6c544ce1b3b8` | 343                   | `/audio`            |
+| `/genjutsu`                    | `ev_9d6a6008ff81e31a326` | 3335                  | `/reality-swap`     |
+| `/higgsfield-genjutsu-presets` | `ev_58c423d7c09ba8b5365` | 574                   | `/reality-swap`     |
+| `/katana`                      | `ev_d39fe7769cf8dcb6ee7` | 727                   | `/quick-cut`        |
+| `/ai-influencer-studio`        | `ev_f4587f1e78805c6de63` | 599                   | `/ai-influencer`    |
+| `/ads-studio`                  | `ev_ade0962aa0b13a0a9df` | 348                   | `/ads-studio`       |
+| `/effects/use`                 | `ev_dbd73ee680a93503c38` | 354                   | `/effects`          |
+| `/generate` (Cinema Studio)    | `ev_efc2d2cd77114cae8c9` | 492                   | `/cinema-studio`    |
+| `/marketing-studio`            | `ev_1bb5a087f3e0de44070` | 734                   | `/marketing-studio` |
+| `/layers` (Edit)               | `ev_008230a019bf8671623` | 426                   | `/edit`             |
+
+**Osservato:** struttura dei pannelli, etichette dei campi, numero di opzioni per
+gruppo (per esempio AI Influencer: 9 tipi di personaggio, 5 generi, 26
+acconciature…), filtri dei preset, layout con barra laterale propria di
+Cinema Studio e Marketing Studio.
+
+**Non osservato / ricostruito:**
+
+- Lo studio di generazione di Genjutsu senza login reindirizza a `/ai/video`. Lo
+  studio Motion transfer / Object swap del clone segue lo schema degli altri
+  studi.
+- Katana genera tramite Claude ("Send & Generate in Claude"). Il clone usa invece
+  un normale pulsante Generate collegato a `runTool`.
+- Ads Studio mostra solo il primo passo di "How it works". Gli altri due passi e
+  le pagine interne degli strumenti sono ricostruzioni.
+- I valori delle opzioni di AI Influencer (tranne i tipi di personaggio) e i nomi
+  di preset e template sono testi segnaposto, non quelli dell'originale.
+
 ## Non ricostruito
 
 Login, pagamenti, prezzi, community, profili, generazione reale (backend
-proprietario), pagine diverse da `/`, `/ai/image` e `/ai/video`.
+proprietario), Supercomputer, 3D, Canvas, MCP e le altre pagine non elencate
+sopra.

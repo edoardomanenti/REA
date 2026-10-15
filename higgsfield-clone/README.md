@@ -20,12 +20,24 @@ npm run preview    # serve la build su http://127.0.0.1:4173
 
 ## Pagine ricostruite
 
-| Route       | Contenuto                                                                                                  |
-| ----------- | ---------------------------------------------------------------------------------------------------------- |
-| `/`         | Homepage completa: header, carosello, promo, banner, festival, MCP, effetti, gallerie, progetti, footer    |
-| `/ai/image` | Studio immagini: banner, stato iniziale, barra prompt con modello, formato, qualità, risoluzione, quantità |
-| `/ai/video` | Studio video: pannello impostazioni (riferimenti, prompt, modello, durata, formato, risoluzione, bitrate)  |
-| altre       | Pagina "Coming soon" con link agli studi                                                                   |
+| Route                    | Contenuto                                                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `/`                      | Homepage completa: header, carosello, promo, banner, festival, MCP, effetti, gallerie, progetti, footer    |
+| `/ai/image`              | Studio immagini: banner, stato iniziale, barra prompt con modello, formato, qualità, risoluzione, quantità |
+| `/ai/video`              | Studio video: pannello impostazioni (riferimenti, prompt, modello, durata, formato, risoluzione, bitrate)  |
+| `/audio`                 | Audio: Text to Speech, Voice Change, Translate                                                             |
+| `/reality-swap`          | Landing "Reality Swap" (al posto di Genjutsu) con feed dei preset                                          |
+| `/reality-swap/create`   | Studio Motion transfer / Object swap: video sorgente, personaggio, location, prodotti                      |
+| `/quick-cut`             | "Quick Cut" (al posto di Katana): video di riferimento + personaggi, preset della community                |
+| `/ai-influencer`         | AI Influencer: 19 gruppi di attributi, modalità Motion, galleria                                           |
+| `/ads-studio`            | Landing Ads Studio con i due strumenti                                                                     |
+| `/ads-studio/create`     | Static ads: sito del brand, prodotti, formato, quantità                                                    |
+| `/ads-studio/multiplier` | Ad multiplier: annuncio di riferimento + prodotti e personaggi                                             |
+| `/effects`               | Effects: scelta preset, personaggio, location, prodotti, risoluzione e formato                             |
+| `/cinema-studio`         | Cinema Studio con barra laterale propria: riferimenti, film setup, camera, palette, luci, modello          |
+| `/marketing-studio`      | Marketing Studio: prompt, inquadratura, formato, avatar e prodotto, template filtrabili                    |
+| `/edit`                  | Edit / Layers: carosello degli strumenti, caricamento immagine, progetti                                   |
+| altre                    | Pagina "Coming soon" con link agli studi                                                                   |
 
 Su telefono compaiono l'header ridotto e la barra di navigazione in basso, come
 sull'originale.
@@ -51,10 +63,18 @@ file aggiungi `media: { src: "/tuo-video.mp4", kind: "video" }` alla voce in
 
 Tutte le generazioni passano da un solo file: `src/api/generation.ts`.
 
+- Image e Video chiamano `generateImage` / `generateVideo`.
+- Tutti gli altri studi chiamano `runTool({ tool, prompt, options, files })`:
+  `tool` dice quale strumento (per esempio `ads.static`, `effects`, `cinema`),
+  `files` contiene i file caricati divisi per casella (`character`, `product`,
+  `source`...) e `options` tutte le impostazioni scelte. Prima di chiamare il
+  provider, `runTool` controlla che ci siano i file obbligatori e il prompt.
+
 - `generateImage(request)` e `generateVideo(request)` ricevono già tutti i
   parametri scelti nell'interfaccia (modello, prompt, formato, durata, file di
   riferimento...).
-- Implementa `provider.generateImage` / `provider.generateVideo` e restituisci
+- Implementa `provider.generateImage`, `provider.generateVideo` e
+  `provider.runTool` e restituisci
   `{ ok: true, assets }` con gli URL dei risultati: le pagine li mostrano da sole
   (griglia immagini e cronologia video).
 - Finché non colleghi nulla, il pulsante Generate mostra "No ... provider is

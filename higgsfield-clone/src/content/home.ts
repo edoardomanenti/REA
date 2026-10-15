@@ -23,7 +23,7 @@ export const heroCards: readonly HeroCard[] = [
   {
     title: p.swap,
     description: "Upload once and get endless new versions",
-    href: "/ai/video?model=reality_swap",
+    href: "/reality-swap",
   },
   {
     title: `${p.swap} API`,
@@ -94,7 +94,7 @@ export const featureCards: readonly FeatureCard[] = [
     description: "One video, many versions",
     icon: "swap",
     tag: "NEW",
-    href: "/ai/video?model=reality_swap",
+    href: "/reality-swap",
   },
   {
     title: `${brand.name} MCP for Claude`,

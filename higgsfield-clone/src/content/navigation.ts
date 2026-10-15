@@ -19,7 +19,7 @@ export const mainNav: readonly NavItem[] = [
   { label: "API", href: "/api", badge: "New" },
   {
     label: p.swap,
-    href: "/ai/video?model=reality_swap",
+    href: "/reality-swap",
     badge: "Top",
     separatorBefore: true,
   },

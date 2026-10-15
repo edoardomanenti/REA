@@ -6,13 +6,10 @@ import { IconDiamond, IconGlobe, IconInstagram, IconSparkle } from "./icons";
 import { LogoMark } from "./Logo";
 
 function isActive(href: string, pathname: string, search: string): boolean {
-  const [path, query] = href.split("?");
+  const [path = "", query] = href.split("?");
   if (path === "/") return pathname === "/";
   if (query) return pathname === path && search.includes(query);
-  return (
-    pathname === path &&
-    !(path === "/ai/video" && search.includes("reality_swap"))
-  );
+  return pathname === path || pathname.startsWith(`${path}/`);
 }
 
 export function Header() {

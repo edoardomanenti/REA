@@ -109,3 +109,15 @@ export const videoAspectRatios = [
 ] as const;
 export const videoResolutions = ["480p", "720p", "1080p"] as const;
 export const videoBitrates = ["Standard", "High"] as const;
+
+export const audioModels = [
+  "Seed Audio 1.0",
+  "ElevenLabs v3",
+  "MiniMax Speech",
+] as const;
+export const cinemaModels = [
+  "Cinema Studio 4.0",
+  "Seedance 2.5",
+  "Kling 3.0",
+  "Veo 3.1",
+] as const;
